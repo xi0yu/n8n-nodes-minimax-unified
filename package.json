@@ -1,0 +1,68 @@
+{
+  "name": "n8n-nodes-minimax-unified",
+  "version": "0.1.0",
+  "description": "n8n community node for MiniMax AI. Supports both the international (api.minimax.io) and China (api.minimaxi.com) endpoints, Standard and Coding Plan keys, and the latest MiniMax-M2.7 model. Fixes the authorization failure seen in older community packages.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "minimax",
+    "ai",
+    "llm",
+    "chat",
+    "m2.7",
+    "m2.5",
+    "agent"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "xi0yu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xi0yu/n8n-nodes-minimax-unified.git"
+  },
+  "homepage": "https://github.com/xi0yu/n8n-nodes-minimax-unified#readme",
+  "bugs": {
+    "url": "https://github.com/xi0yu/n8n-nodes-minimax-unified/issues"
+  },
+  "main": "index.js",
+  "files": [
+    "dist",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && npm run copy:assets",
+    "copy:assets": "node scripts/copy-assets.js",
+    "dev": "tsc -p tsconfig.json --watch",
+    "clean": "rm -rf dist",
+    "verify": "node scripts/verify-build.js",
+    "prepublishOnly": "npm run clean && npm run build && npm run verify"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/MiniMaxApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/MiniMax/MiniMax.node.js",
+      "dist/nodes/MiniMax/MiniMaxChatModel.node.js"
+    ]
+  },
+  "dependencies": {
+    "@langchain/anthropic": "^0.3.0",
+    "@langchain/openai": "^0.3.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "n8n-workflow": "*",
+    "typescript": "~5.4.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.10"
+  }
+}
