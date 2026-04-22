@@ -1,17 +1,25 @@
 {
   "name": "n8n-nodes-minimax-unified",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "n8n community node for MiniMax AI. Supports both the international (api.minimax.io) and China (api.minimaxi.com) endpoints, Standard and Coding Plan keys, and the latest MiniMax-M2.7 model. Fixes the authorization failure seen in older community packages.",
   "keywords": [
     "n8n-community-node-package",
+    "n8n-nodes-minimax-unified",
+    "n8n-nodes",
     "n8n",
+    "n8n.io",
+    "n8n.io-nodes",
     "minimax",
+    "minimax-ai",
+    "minimaxi",
     "ai",
+    "chatbot",
     "llm",
     "chat",
-    "m2.7",
-    "m2.5",
-    "agent"
+    "language-model",
+    "ai-agent",
+    "openai-compatible",
+    "anthropic-compatible"
   ],
   "license": "MIT",
   "author": {
@@ -28,6 +36,7 @@
   "main": "index.js",
   "files": [
     "dist",
+    "docs",
     "index.js",
     "README.md",
     "LICENSE"
@@ -64,5 +73,8 @@
   },
   "engines": {
     "node": ">=18.10"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

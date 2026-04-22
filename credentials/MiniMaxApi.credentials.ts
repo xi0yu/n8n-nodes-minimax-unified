@@ -31,9 +31,11 @@ export class MiniMaxApi implements ICredentialType {
       displayName: 'Custom Base URL',
       name: 'customBaseUrl',
       type: 'string',
-      default: 'https://api.minimaxi.com',
-      placeholder: 'https://api.minimaxi.com',
-      description: 'Base URL without trailing slash. Used only when Region = Custom.',
+      required: true,
+      default: '',
+      placeholder: 'e.g. https://your-minimax-proxy.example.com',
+      description:
+        'Base URL without trailing slash. Use this for a proxy or a private MiniMax deployment. For MiniMax official endpoints, prefer Region = International or China instead.',
       displayOptions: { show: { region: ['custom'] } },
     },
     {
