@@ -13,7 +13,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: ['18.x', '20.x', '22.x']
+        # Only Node 22+ is tested: n8n-workflow transitively pulls
+        # isolated-vm, whose latest release requires V8 APIs available
+        # only in Node 22+. Runtime users are unaffected (they install
+        # inside an already-running n8n).
+        node: ['22.x']
     steps:
       - uses: actions/checkout@v4
 
